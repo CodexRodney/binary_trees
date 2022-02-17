@@ -5,17 +5,11 @@
  * @tree: pointer to the root node of the tree to delete
  */
 
-void deleteTree(binary_tree_t *tree)
+void binary_tree_delete(binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return;
-	deleteTree(tree->left);
-	deleteTree(tree->right);
+	binary_tree_delete(tree->left);
+	binary_tree_delete(tree->right);
 	free(tree);
-};
-
-void binary_tree_delete(binary_tree_t *tree)
-{
-	deleteTree(tree);
-	*node_ref = NULL;
 }
